@@ -14,6 +14,8 @@ import { BannerComponent } from "./banner/banner.component";
 
 import { Angular2TokenService } from 'angular2-token';
 import {AuthService} from "./services/auth.service";
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import {AuthService} from "./services/auth.service";
     NavigationComponent,
     HomeComponent,
     FooterComponent,
-    BannerComponent
+    BannerComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     MaterializeModule,
