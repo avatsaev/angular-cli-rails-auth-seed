@@ -12,7 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from "./home/home.component";
 import { BannerComponent } from "./banner/banner.component";
 
-
+import { Angular2TokenService } from 'angular2-token';
+import {AuthService} from "./services/auth.service";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { BannerComponent } from "./banner/banner.component";
     HttpModule,
     RouterModule.forRoot(AppRoutes)
   ],
-  providers: [],
+  providers: [Angular2TokenService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
