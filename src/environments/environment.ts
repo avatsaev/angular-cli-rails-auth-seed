@@ -8,7 +8,7 @@ export const environment = {
 
   auth_config: {
     apiBase:                    'http://localhost:3000',
-    apiPath:                    '/',
+    apiPath:                    null,
 
     signInPath:                 'auth/sign_in',
     signInRedirect:             null,

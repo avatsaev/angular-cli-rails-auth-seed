@@ -1,0 +1,53 @@
+<div id="auth_modal" class="modal" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="authModalActions">
+
+
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h4>
+        Login
+      </h4>
+    </div>
+
+    <form (ngSubmit)="onSignInSubmit()" #f="ngForm" >
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email"
+                 type="email"
+                 required
+                 pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                 name='email' [(ngModel)]="signInUser.email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" required  name='password' [(ngModel)]="signInUser.password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col s4 offset-s8">
+
+          <button class="waves-effect waves-light btn red" (click)="closeModal()" > Cancel </button>
+
+          <button type="submit" [ngClass]="{'disabled': !(f.valid)}" class="waves-effect waves-light btn blue"> Login </button>
+
+
+        </div>
+
+
+      </div>
+
+
+
+    </form>
+
+
+  </div>
+
+</div>

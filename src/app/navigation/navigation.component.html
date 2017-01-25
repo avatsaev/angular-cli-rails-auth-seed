@@ -6,17 +6,18 @@
         <a href="#" id="logo-container" class="brand-logo">NG Cli Seed</a>
         <ul class="right hide-on-med-and-down">
 
-          <!--<li *ngIf="!authService.userLoggedIn()"><a href="#intro">Sign in</a></li>-->
-          <!--<li *ngIf="!authService.userLoggedIn()"><a href="#intro">Sign up</a></li>-->
+          <li *ngIf="!(authService.userLoggedIn$() | async)"> <a (click)="presentSignInModal()">Sign in</a></li>
+          <li *ngIf="!(authService.userLoggedIn$() | async)"> <a href="#intro">Sign up</a></li>
 
-          <!--<li  *ngIf="authService.userLoggedIn()"><a href="#intro">Profile</a></li>-->
+          <li  *ngIf="authService.userLoggedIn$() | async"> <a href="#intro">Profile</a></li>
+          <li  *ngIf="authService.userLoggedIn$() | async"> <a (click)="authService.signOut()">Sign out</a></li>
 
         </ul>
         <ul id="nav-mobile" class="side-nav">
-          <li><a href="#intro">Sign in</a></li>
-          <li><a href="#intro">Sign up</a></li>
+          <!--<li><a href="#intro">Sign in</a></li>-->
+          <!--<li><a href="#intro">Sign up</a></li>-->
 
-          <li><a href="#intro">Profile</a></li>
+          <!--<li><a href="#intro">Profile</a></li>-->
           <!--<li><a href="#work">Work</a></li>-->
           <!--<li><a href="#team">Team</a></li>-->
           <!--<li><a href="#contact">Contact</a></li>-->
@@ -25,4 +26,7 @@
       </div>
     </div>
   </nav>
+
+  <app-auth-modal mode="signIn"></app-auth-modal>
+
 </div>

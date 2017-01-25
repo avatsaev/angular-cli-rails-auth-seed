@@ -11,7 +11,7 @@ import {AuthService} from "./services/auth.service";
 
 export class AppComponent implements OnInit{
 
-  constructor(protected authService:AuthService){}
+  constructor(){}
 
 
   ngOnInit(){
