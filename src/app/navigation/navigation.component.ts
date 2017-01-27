@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
-import {AuthService} from "../services/auth.service";
+import {AuthService, AuthMode} from "../services/auth.service";
 
 import {AuthModalComponent} from "../auth-modal/auth-modal.component";
 
@@ -23,8 +23,15 @@ export class NavigationComponent implements OnInit, AfterViewInit {
   }
 
   presentSignInModal(){
-    this.authModalC.openModal();
+    this.authModalC.openModal(AuthMode.signin);
 
   }
 
+  presentSignUpModal(){
+    this.authModalC.openModal(AuthMode.signup);
+  }
+
 }
+
+
+//railstokenauthseed

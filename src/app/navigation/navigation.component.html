@@ -7,7 +7,7 @@
         <ul class="right hide-on-med-and-down">
 
           <li *ngIf="!(authService.userLoggedIn$() | async)"> <a (click)="presentSignInModal()">Sign in</a></li>
-          <li *ngIf="!(authService.userLoggedIn$() | async)"> <a href="#intro">Sign up</a></li>
+          <li *ngIf="!(authService.userLoggedIn$() | async)"> <a (click)="presentSignUpModal()">Sign up</a></li>
 
           <li  *ngIf="authService.userLoggedIn$() | async"> <a href="#intro">Profile</a></li>
           <li  *ngIf="authService.userLoggedIn$() | async"> <a (click)="authService.signOut()">Sign out</a></li>

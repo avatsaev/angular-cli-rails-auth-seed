@@ -3,49 +3,55 @@
 
   <div class="modal-content">
 
-    <div class="modal-header">
-      <h4>
-        Login
-      </h4>
+    <div class="row">
+
+      <div class="row">
+
+        <a class="modal-close right" (click)="closeModal()">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </a>
+      </div>
+
+
+      <div class="row">
+
+        <ul class="tabs" materialize="tabs">
+
+          <li class="tab col s6 text-blue text-darken-4">
+            <a
+                    [ngClass]="{'active': true}"
+                    (click)="setSignInMode()"
+            >
+              Sign in
+            </a>
+          </li>
+
+          <li class="tab col s6">
+
+            <a
+                    [ngClass]="{'active': isSignUpMode()}"
+                    (click)="setSignUpMode()">
+              Sign up
+            </a>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+
+
+
+      <div class="col s12">
+        <app-signin-form *ngIf="isSignInMode()" (signinFormResult)="onSignInResult($event)"></app-signin-form>
+        <app-signup-form *ngIf="isSignUpMode()" (signUpFormResult)="onSignUpResult($event)" ></app-signup-form>
+      </div>
+
     </div>
 
-    <form (ngSubmit)="onSignInSubmit()" #f="ngForm" >
-
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email"
-                 type="email"
-                 required
-                 pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-                 name='email' [(ngModel)]="signInUser.email" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" required  name='password' [(ngModel)]="signInUser.password" class="validate">
-          <label for="password">Password</label>
-        </div>
-      </div>
-
-      <div class="row">
-
-        <div class="col s4 offset-s8">
-
-          <button class="waves-effect waves-light btn red" (click)="closeModal()" > Cancel </button>
-
-          <button type="submit" [ngClass]="{'disabled': !(f.valid)}" class="waves-effect waves-light btn blue"> Login </button>
 
 
-        </div>
-
-
-      </div>
-
-
-
-    </form>
 
 
   </div>

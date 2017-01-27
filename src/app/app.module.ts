@@ -17,6 +17,8 @@ import {AuthService} from "./services/auth.service";
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
+import { SigninFormComponent } from './signin-form/signin-form.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { AuthModalComponent } from './auth-modal/auth-modal.component';
     BannerComponent,
     SigninComponent,
     SignupComponent,
-    AuthModalComponent
+    AuthModalComponent,
+    SigninFormComponent,
+    SignupFormComponent
   ],
   imports: [
     MaterializeModule,

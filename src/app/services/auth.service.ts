@@ -5,6 +5,8 @@ import {environment} from '../../environments/environment'
 import {Observable, BehaviorSubject} from "rxjs";
 import {Response} from "@angular/http";
 
+
+
 @Injectable()
 
 export class AuthService {
@@ -63,4 +65,10 @@ export class AuthService {
     return this.userLoggedInSubject.asObservable();
   }
 
+}
+
+
+export enum AuthMode {
+  signin,
+  signup
 }
