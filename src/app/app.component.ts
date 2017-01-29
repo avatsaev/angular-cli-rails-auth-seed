@@ -1,5 +1,6 @@
 import { Component , OnInit} from '@angular/core';
-import {AuthService} from "./services/auth.service";
+import {Angular2TokenService} from "angular2-token";
+import {environment} from "../environments/environment";
 
 
 @Component({
@@ -11,7 +12,9 @@ import {AuthService} from "./services/auth.service";
 
 export class AppComponent implements OnInit{
 
-  constructor(){}
+  constructor(private authService: Angular2TokenService){
+    this.authService.init(environment.auth_config);
+  }
 
 
   ngOnInit(){

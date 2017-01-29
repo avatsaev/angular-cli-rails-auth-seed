@@ -25,7 +25,7 @@ export class SigninFormComponent implements OnInit {
     this.authService.emailSignIn(this.signInUser.email, this.signInUser.password).subscribe(
 
         res => {
-          console.log('res:', res.status);
+          console.log('res:', res.headers.toJSON());
           if(res.status == 200){
             this.signinFormResult.emit({signedIn: true, res});
           }

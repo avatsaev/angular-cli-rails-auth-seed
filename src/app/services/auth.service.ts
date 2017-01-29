@@ -5,8 +5,6 @@ import {environment} from '../../environments/environment'
 import {Observable, BehaviorSubject} from "rxjs";
 import {Response} from "@angular/http";
 
-
-
 @Injectable()
 
 export class AuthService {
@@ -15,7 +13,6 @@ export class AuthService {
 
   constructor(private tokenService: Angular2TokenService) {
     console.log("init auth service...");
-    this.tokenService.init(environment.auth_config);
   }
 
 
