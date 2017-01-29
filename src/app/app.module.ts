@@ -19,6 +19,9 @@ import { SignupComponent } from './signup/signup.component';
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
 import { SigninFormComponent } from './signin-form/signin-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import {SignInUpGuard} from "./guards/sign_in_up.guard";
+import { ProfileComponent } from './profile/profile.component';
+import {AuthGuard} from "./guards/auth.guard";
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     SignupComponent,
     AuthModalComponent,
     SigninFormComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    ProfileComponent
   ],
   imports: [
     MaterializeModule,
@@ -40,7 +44,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     HttpModule,
     RouterModule.forRoot(AppRoutes)
   ],
-  providers: [Angular2TokenService, AuthService],
+  providers: [Angular2TokenService, AuthService, SignInUpGuard, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
