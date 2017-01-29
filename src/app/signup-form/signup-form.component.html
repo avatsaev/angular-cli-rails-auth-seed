@@ -28,19 +28,16 @@
         <label for="password_confirmation">Password confirmation</label>
       </div>
 
-    </div>
+      <span *ngIf="!passwordsMatch()" style="color:red">Passwords must match</span>
 
 
+      <div class="col s12">
 
+        <button type="submit" [disabled]="!(f.valid) || !passwordsMatch()" [ngClass]="{'disabled': !(f.valid)}" class="waves-effect waves-light btn blue right"> Sign up </button>
 
-
-
-    <div class="col s12">
-
-      <button type="submit" [disabled]="!(f.valid)" [ngClass]="{'disabled': !(f.valid)}" class="waves-effect waves-light btn blue right"> Sign up </button>
+      </div>
 
     </div>
-
 
 
   </form>

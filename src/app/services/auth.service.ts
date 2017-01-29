@@ -4,6 +4,7 @@ import {Angular2TokenService} from "angular2-token";
 import {environment} from '../../environments/environment'
 import {Observable, BehaviorSubject} from "rxjs";
 import {Response} from "@angular/http";
+import {Router} from "@angular/router";
 
 @Injectable()
 
@@ -11,7 +12,7 @@ export class AuthService {
 
   userLoggedInSubject = new BehaviorSubject<boolean>(this.userLoggedIn());
 
-  constructor(private tokenService: Angular2TokenService) {
+  constructor(private tokenService: Angular2TokenService, private router:Router) {
     console.log("init auth service...");
   }
 
@@ -34,6 +35,7 @@ export class AuthService {
 
     let sub = this.tokenService.signOut();
     sub.subscribe( () => this.userLoggedInSubject.next(this.userLoggedIn()));
+    this.router.navigate(['']);
     return sub;
   }
 

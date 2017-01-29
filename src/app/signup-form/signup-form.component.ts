@@ -21,6 +21,10 @@ export class SignupFormComponent implements OnInit {
   ngOnInit() {
   }
 
+  passwordsMatch():boolean{
+    return this.signUpUser.password_conformation == this.signUpUser.password;
+  }
+
   onSignUpSubmit(){
 
     this.authService.signUp(this.signUpUser.email, this.signUpUser.password, this.signUpUser.password_conformation).subscribe(

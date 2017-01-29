@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../services/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-signin',
@@ -8,9 +9,13 @@ import {AuthService} from "../services/auth.service";
 })
 export class SigninComponent implements OnInit {
 
-  constructor(protected authService:AuthService) { }
+  constructor(protected authService:AuthService, private router:Router) { }
 
   ngOnInit() {
+  }
+
+  onSignInResult(res){
+    if(res.signedIn) this.router.navigate(['/profile']);
   }
 
 }

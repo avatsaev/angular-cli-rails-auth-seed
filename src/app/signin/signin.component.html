@@ -1,8 +1,19 @@
 <div class="container">
-  <div class="row">
-    <div  class="col s12">
+  <div class="row" style="margin-top: 40px">
 
-      <app-signin-form></app-signin-form>
+    <div  class="col s6 offset-s3">
+
+      <div class="card ">
+        <div class="card-content">
+          <h5 class="center">
+            User Login
+          </h5>
+          <br>
+          <app-signin-form (signinFormResult)="onSignInResult($event)"></app-signin-form>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </div>
